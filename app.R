@@ -11,7 +11,9 @@ library(shiny)
 library(dplyr)
 library(metaviz)
 source('Forest_plot_function.R')
-
+#IDS=readRDS('ID_mapping_file')
+#meta_objects=readRDS('Meta_objects')
+#summary_meta_ENSEMBL=readRDS('Summary_table_for_metaAnalysis')
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 

@@ -1,3 +1,6 @@
+IDS=readRDS('ID_mapping_file')
+meta_objects=readRDS('Meta_objects')
+summary_meta_ENSEMBL=readRDS('Summary_table_for_metaAnalysis')
 
 forest_plot_function=function(protein_id){
   selected_protein=summary_meta_ENSEMBL[protein_id,]
