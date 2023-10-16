@@ -33,7 +33,8 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            shiny::plotOutput("forestPlot")
+            shiny::plotOutput("forestPlot"),
+            shiny::tableOutput('table')
         )
     )
 )
@@ -50,6 +51,8 @@ server <- function(input, output) {
     
     output$GO_terms=renderText(IDS[key_id(),"Gene Ontology (biological process)"])
     output$GO_CC_terms=renderText(IDS[key_id(),"Gene Ontology (cellular component)"])
+    output$table=renderTable({ENSEMBL_id=IDS[key_id(),"ENSEMBL"]
+    Meta_results[ENSEMBL_id,c("Gene","Uniprot","LogFC","Confidence Interval(lower)","Confidence Interval(Upper)","Num. Participants","Num. Studies","adj.P","sig")]})
     
 }
 

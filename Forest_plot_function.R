@@ -1,7 +1,7 @@
 IDS=readRDS('ID_mapping_file')
 meta_objects=readRDS('Meta_objects')
 summary_meta_ENSEMBL=readRDS('Summary_table_for_metaAnalysis')
-
+Meta_results=readRDS('Final_meta_analysis_results')
 forest_plot_function=function(protein_id){
   selected_protein=summary_meta_ENSEMBL[protein_id,]
   selected_protein_table=data.frame(t(selected_protein[grepl('logFC|median' ,colnames(selected_protein))]),
